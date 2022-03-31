@@ -16,6 +16,8 @@ async function getData() {
 
     const { data } = await axios.get('https://www.boredapi.com/api/activity');
 
+    console.log(`New thing to do ${data.activity}`)
+    
     await producer.send({
         topic: 'bored-base',
         messages: [
@@ -32,8 +34,6 @@ async function getData() {
         ],
     
     });
-
-    console.log(`New thing to do ${data.activity}`)
 }
 
 setInterval(getData, 5100); //5.1s

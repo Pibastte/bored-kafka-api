@@ -12,11 +12,6 @@ async function main(){
         //print all entries
         const data = await db.collection('activity').find({}).toArray();
         console.log('All:', data, data.length);
-
-        //get last position + country
-
-        //iss speed avg
-
     }
     catch(err){
         console.log(err);
@@ -24,7 +19,6 @@ async function main(){
     finally {
         await client.close();
     }
-
 }
 
 main();
